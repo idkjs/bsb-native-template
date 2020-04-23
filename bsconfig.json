@@ -1,0 +1,13 @@
+{
+  "name": "bsb-native-template",
+  "sources": "src",
+  "bs-dependencies": [],
+  "entries": [{
+    "backend": "native",
+    "main-module": "Index"
+  },{
+    "backend": "js",
+    "main-module": "Index"
+  }],
+  "refmt": 3
+}
