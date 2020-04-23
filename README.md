@@ -2,6 +2,10 @@
 ---
 This is a template for starting a [bsb-native](https://github.com/bsansouci/bucklescript) project.
 
+`bsb-native` let's you generate [reason native](https://reason-native.com) code with [bucklescript](https://bucklescript.github.io).
+
+It based on [Schmavery/ludum-dare-46](https://github.com/Schmavery/ludum-dare-46) which you should check out for an example using [Reprocessing](https://github.com/schmavery/reprocessing).
+
 ### Using the Template
 
 Click the template button to generate a template:
