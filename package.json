@@ -1,7 +1,7 @@
 {
   "name": "bsb-native-template",
   "scripts": {
-    "start": "./indexhot.exe",
+    "start": "./index.exe",
     "start:native": "./index.exe",
     "start:web": "npx serve .",
     "build": "bsb -clean-world -make-world -backend bytecode",

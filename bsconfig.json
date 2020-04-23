@@ -3,6 +3,9 @@
   "sources": "src",
   "bs-dependencies": [],
   "entries": [{
+    "backend": "bytecode",
+    "main-module": "Index"
+  },{
     "backend": "native",
     "main-module": "Index"
   },{

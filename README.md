@@ -1,38 +1,63 @@
-Death Trap II: Revenge of the Walls
+# Bsb Native Template
 ---
-This is a game made for [Ludum Dare 46](https://ldjam.com/events/ludum-dare/46). The theme was "Keep it alive".
+This is a template for starting a [bsb-native](https://github.com/bsansouci/bucklescript) project.
 
-It's a puzzle game where you have to save the life of the main character as they bumble helplessly around a dangerous dungeon. Pits and walls are especially deadly. 
+### Using the Template
 
-Play now!
----
+Click the template button to generate a template:
 
-Click here to play: 
-https://schmavery.github.io/ludum-dare-46/
+[![use-this-template-button-image](./usethistemplate.png)](https://github.com/idkjs/bsb-native-template/generate)
 
-Instructions: Use the mouse to drag and drop objects onto the map. You can click the buttons in the bottom left to restart, undo, or play through the level.
+or 
 
-More Info
----
-This game was build using [Reprocessing](https://github.com/schmavery/reprocessing), a 2D graphics library we wrote in ReasonML/OCaml, with an api inspired by Processing.
-
-See [here](https://github.com/schmavery/reprocessing#projects-using-reprocessing) for more examples of games and demos built in Reprocessing.
-
-
-### Build
 ```
-git clone https://github.com/Schmavery/ludum-dare-46.git
+git clone https://github.com/idkjs/bsb-native-template.git
+```
+
+### Build Bytecode
+```
 npm install
 npm run build
-```
-
-### Start
-```
+# start the project
 npm start
 ```
 
-To build to JS run `npm run build:web` and then run a static server (like `python -m SimpleHTTPServer`) and go to `http://localhost:8000`. If you're using safari you can simply open the `index.html` and tick `Develop > Disable Cross-Origin Restrictions`.
+### Build Native 
 
-To build to native run `npm run build:native` and run `npm run start:native`
+Same steps and out put as above because it doesn't matter for this template..
 
-The build system used is [bsb-native](https://github.com/bsansouci/bucklescript).
+```
+npm install
+npm run build:native
+
+# start the project
+npm start:native
+```
+
+### Build Web 
+
+```
+npm run build:web
+
+# start the project
+npm start:web
+```
+
+To build to JS run `npm run build:web` which will run a a static server with [`serve`](https://www.npmjs.com/package/serve) and go to `http://localhost:5000`. If you're using safari you can simply open the `index.html` and tick `Develop > Disable Cross-Origin Restrictions`.
+
+Check the browser console:
+```sh
+It Works
+```
+
+To build to native run `npm run build:native` and run `npm run start:native`. You should see:
+
+```sh
+~/Github/bsb-native-template master*
+❯ npm run start:native
+
+> bsb-native-template@ start:native /Users/mandalarian/Github/bsb-native-template
+> ./index.exe
+
+It Works
+```
