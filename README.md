@@ -65,3 +65,23 @@ To build to native run `npm run build:native` and run `npm run start:native`. Yo
 
 It Works
 ```
+
+# Bsb Native Using Belt
+## Code Seperation with Belt
+
+If you add:
+```re
+let beltWorks = Belt.List.length([1, 2, 3]);
+Js.Console.log(beltWorks);
+```
+
+to `index.re` and run `npm run build:web` you will see that you are good to go.
+
+If you try to build `native` or `byte` the compiler will throw an error.
+
+```sh
+Error: Unbound module Belt
+FAILED: subcommand failed.
+```
+
+Need to study this: [https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native](https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native-22f45e5e946d).
