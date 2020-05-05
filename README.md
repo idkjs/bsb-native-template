@@ -85,6 +85,68 @@ FAILED: subcommand failed.
 ```
 
 ## Further Study
+
 1. [https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native](https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native-22f45e5e946d)
 
 2. [bsansouci/matchenv](https://github.com/bsansouci/matchenv) [dead?](https://github.com/BuckleScript/bucklescript/pull/4219)
+
+3. `Sys.argv` [BS_NATIVE](https://github.com/BuckleScript/bucklescript/blob/c861780650c9f093250cf7448f58e55f2ee86d1c/jscomp/main/bsb_main.ml#L83)
+
+4. `Sys.argv` [BS_BROWSER](https://github.com/BuckleScript/bucklescript/blob/407d24b141bca40b5ff887ebd04cd0db438ba663/jscomp/stubs/bs_hash_stubs.ml#L2)
+
+5. `Sys.argv` [BS_WATCH_CLEAR](https://github.com/BuckleScript/bucklescript/blob/7015ce12d629fd9b6385045e5b486f54a941d956/bsb#L425)
+
+Usage: `"start": "BS_WATCH_CLEAR=true bsb -make-world -w",`
+
+6. `Sys.argv` [BS_NATIVE_PPX](https://github.com/BuckleScript/bucklescript/blob/3989f0feee78827d548be0a0bc22dea607c3c5a9/jscomp/syntax/native_ast_derive_abstract.ml#L172)
+
+7. [type backend_type](https://github.com/BuckleScript/bucklescript/blob/7015ce12d629fd9b6385045e5b486f54a941d956/jscomp/stdlib-406/sys.ml#L22)
+
+```re
+type backend_type =
+  | Native
+  | Bytecode
+  | Other of string
+```
+
+8. `Sys.argv` [BS](https://github.com/BuckleScript/bucklescript/blob/7015ce12d629fd9b6385045e5b486f54a941d956/jscomp/stdlib-406/sys.ml#L40)
+
+9. [`ocaml-dependencies`] not in  [`#build-schema.json`](https://bucklescript.github.io/bucklescript/docson/#build-schema.json). Its in [bsb-native here](https://github.com/bsansouci/bsb-native/blob/6410b9808ab7e1f6ec5c3cf8770c5d8b9182c3d6/lib/bsb_helper.ml#L5107) thanks to [@anmonteiro](https://discordapp.com/channels/235176658175262720/235200837608144898/707317419621875742).
+
+## [Conditional compilation](https://github.com/bsansouci/bucklescript#conditional-compilation)
+
+If you would like to have all your code in the same package, you can use BuckleScript's conditional compilation. To do so, place
+
+```re
+#if BSB_BACKEND = "bytecode" then
+  include MyModule_Native
+#elif BSB_BACKEND = "native" then
+  include MyModule_Native
+#else
+  include MyModule_Js
+#end
+
+(* We support Darwin, Linux, Windows compile time checks *)
+#if OS_TYPE = "Darwin" then 
+  external fabs : float -> float = "fabs"
+#end
+```
+
+Docs are old I think so...
+
+```re
+#if BS_BACKEND = "bytecode" then
+  include MyModule_Native
+#elif BS_BACKEND = "native" then
+  include MyModule_Native
+#else
+  include MyModule_Js
+#end
+
+(* We support Darwin, Linux, Windows compile time checks *)
+#if OS_TYPE = "Darwin" then 
+  external fabs : float -> float = "fabs"
+#end
+```
+
+Didn't work in [reason-cli-tools](https://github.com/idkjs/reason-cli-tools)
