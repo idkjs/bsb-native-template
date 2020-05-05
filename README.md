@@ -84,4 +84,7 @@ Error: Unbound module Belt
 FAILED: subcommand failed.
 ```
 
-Need to study this: [https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native](https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native-22f45e5e946d).
+## Further Study
+1. [https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native](https://tech.ahrefs.com/how-to-write-a-library-for-bucklescript-and-native-22f45e5e946d)
+
+2. [bsansouci/matchenv](https://github.com/bsansouci/matchenv) [dead?](https://github.com/BuckleScript/bucklescript/pull/4219)
